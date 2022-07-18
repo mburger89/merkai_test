@@ -1,11 +1,11 @@
 # Meraki take home test
 
 ## Install
-    This project uses pipenv to manage depences.
-    get it by doing `brew install pipenv` (if on a mac) or `pip install pipenv`.
-    Then you can just run pipenv install at the root of the project.
+This project uses pipenv to manage depences.
+get it by doing `brew install pipenv` (if on a mac) or `pip install pipenv`.
+Then you can just run pipenv install at the root of the project.
 
-    if you prefer to do it a different way you can refer to the  Pipfile for dependencies
+if you prefer to do it a different way you can refer to the  Pipfile for dependencies
 
 ## Running the test
 ```
