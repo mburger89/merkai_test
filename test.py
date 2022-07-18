@@ -3,7 +3,6 @@ import os
 import sys
 import time
 import uuid 
-import traceback
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -27,8 +26,8 @@ def get_result_not_equals(a, b):
         return True
     except AssertionError:
         return False
-    except:
-        print(traceback.format_exc())
+    except Exception as error:
+        print(error.with_traceback())
 
 def write_results(results):
     with open(f"{os.getcwd()}/results/{results['test_id']}.json", "w") as file:
@@ -39,6 +38,7 @@ def check_for_results_folder():
         os.mkdir(f'{os.getcwd()}/results')
 
 def main(api_key):
+    print("Test started")
     check_for_results_folder()
     test_run_res= test_results
     test_run_res["test_id"] = str(uuid.uuid4())
@@ -75,7 +75,7 @@ def main(api_key):
     write_results(test_run_res)
     print("Results write to json file in results folder")
     driver.close()
-    # print(test_run_res)
+    print("Test finished")
 
 if __name__ == "__main__":
     args = sys.argv
